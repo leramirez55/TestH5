@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 SHELL ["/bin/bash", "-c"]
@@ -6,15 +6,16 @@ SHELL ["/bin/bash", "-c"]
 # Install base packages and clean up apt cache
 RUN apt-get update && \
     apt-get install -y \
-      build-essential \
-      cmake \
-      curl \
-      git \
-      wget \
-      zip \
-      ninja-build \
-      software-properties-common \
-      libncurses6 && \
+    build-essential \
+    cmake \
+    curl \
+    git \
+    wget \
+    zip \
+    ninja-build \
+    software-properties-common \
+    libncurses5 \
+    libncursesw5 && \
     rm -rf /var/lib/apt/lists/*
 
 # Install GNU Arm Embedded Toolchain based on architecture
@@ -47,17 +48,6 @@ RUN ARCH=$(uname -m) && \
     rm "$JLINK_DEB"
 
 
-RUN apt-get update && \
-    apt-get install -y \
-    build-essential \
-    cmake \
-    curl \
-    git \
-    wget \
-    zip \
-    software-properties-common \
-    libncurses6 && \
-    rm -rf /var/lib/apt/lists/*
-
 # Set up the correct PATH for the toolchain
 ENV PATH="/opt/arm-gnu-toolchain-14.2.rel1-aarch64-arm-none-eabi/bin:$PATH"
+ENV PATH="/opt/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin:$PATH"
