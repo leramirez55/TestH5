@@ -1,0 +1,4 @@
+r
+loadfile /workspaces/TestH5/build/Debug/TestH5.elf
+g
+exit

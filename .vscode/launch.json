@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/build/bootloader",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/opt/arm-gnu-toolchain-14.2.rel1-aarch64-arm-none-eabi/bin/arm-none-eabi-gdb",
+            "setupCommands": [
+                {
+                    "text": "file '${workspaceRoot}/build/TestH5.elf"
+                },
+                {
+                    "text": "target remote localhost:3333"
+                },
+                {
+                    "text": "load '${workspaceRoot}/build/TestH5.elf"
+                }
+            ],
+            "targetArchitecture": "arm",
+            "debugServerPath": "JLinkGDBServerCLExe",
+            "debugServerArgs": "-select ip=192.168.0.225 -if swd -speed 4000 -endian little -port 3333 -device STM32H563ZI",
+            "serverStarted": "Connected to target",
+            "filterStdout": true,
+            //"stopAtConnect": true,
+            "preLaunchTask": "Flash STM32H563ZI",
+            "svdPath": "${workspaceFolder}/stm32h563.svd"
+        }
+    ]
+}

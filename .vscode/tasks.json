@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Flash STM32H563ZI",
+        "type": "shell",
+        "command": "JLinkExe",
+        "args": [
+          "-ip",
+          "192.168.0.225",
+          "-device", "STM32H563ZI",
+          "-if", "swd",
+          "-speed", "4000",
+          "-autoconnect", "1",
+          "-CommanderScript", "${workspaceFolder}/flash.jlink"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
