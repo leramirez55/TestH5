@@ -11,7 +11,7 @@
             "cwd": "${workspaceFolder}",
             "program": "${workspaceFolder}/build/Debug/TestH5.elf",
             "MIMode": "gdb",
-            "miDebuggerPath": "/opt/arm-gnu-toolchain-14.2.rel1-aarch64-arm-none-eabi/bin/arm-none-eabi-gdb",
+            "miDebuggerPath": "/opt/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gdb",
             "setupCommands": [
                 {
                     "text": "file '${workspaceRoot}/build/Debug/TestH5.elf"
@@ -25,7 +25,7 @@
             ],
             "targetArchitecture": "arm",
             "debugServerPath": "JLinkGDBServerCLExe",
-            "debugServerArgs": "-select ip=192.168.0.100 -if swd -speed 4000 -endian little -port 3333 -device STM32H563ZI",
+            "debugServerArgs": "-select ip=192.168.1.103 -if swd -speed 4000 -endian little -port 3333 -device STM32H563ZI",
             "serverStarted": "Connected to target",
             "filterStdout": true,
             //"stopAtConnect": true,

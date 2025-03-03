@@ -7,7 +7,7 @@
         "command": "JLinkExe",
         "args": [
           "-ip",
-          "192.168.0.100",
+          "192.168.1.103",
           "-device", "STM32H563ZI",
           "-if", "swd",
           "-speed", "4000",

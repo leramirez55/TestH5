@@ -66,8 +66,19 @@ void SystemClock_Config(void);
   * @brief  The application entry point.
   * @retval int
   */
+
+#include "./RTT/SEGGER_RTT_V810f/Config/SEGGER_RTT_Conf.h"
+#include "./RTT/SEGGER_RTT_V810f/RTT/SEGGER_RTT.h"
+
 int main(void)
 {
+
+
+
+  SEGGER_RTT_ConfigUpBuffer(0, NULL, NULL, 0, SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL);
+
+  SEGGER_RTT_WriteString(0, "SEGGER Real-Time-Terminal Sample\r\n\r\n");
+  SEGGER_RTT_WriteString(0, "###### Testing SEGGER_printf() ######\r\n");
 
   /* USER CODE BEGIN 1 */
 

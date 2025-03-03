@@ -43,16 +43,22 @@ add_subdirectory(cmake/stm32cubemx)
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
+   
 )
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    ${CMAKE_SOURCE_DIR}/Core/Src/RTT/SEGGER_RTT_V810f/RTT/SEGGER_RTT.c
+    ${CMAKE_SOURCE_DIR}/Core/Src/RTT/SEGGER_RTT_V810f/RTT/SEGGER_RTT_printf.c
 )
+
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+    ${CMAKE_SOURCE_DIR}Core/Src/RTT/SEGGER_RTT_V810f/RTT
+    ${CMAKE_SOURCE_DIR}Core/Src/RTT/SEGGER_RTT_V810f/Config
 )
 
 # Add project symbols (macros)
